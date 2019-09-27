@@ -37,8 +37,10 @@ It may help to see what is going on more broken out, like so:
 ```
 // connect returns a function (also called a HOC)
 const returnedHOC = connect(mapStateToProps, mapDispatchToProps)
+
 // we then invoke that function (HOC), passing in our component
 const componentWithPropsFromRedux = returnedHOC(MyComponent)
+
 // finally, we export the resulting component from our file
 export default componentWithPropsFromRedux;
 ```
