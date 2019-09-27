@@ -44,3 +44,31 @@ const componentWithPropsFromRedux = returnedHOC(MyComponent)
 // finally, we export the resulting component from our file
 export default componentWithPropsFromRedux;
 ```
+
+### `mapStateToProps`
+
+`mapStateToProps` is a function and the first parameter that `connect()`
+accepts. 
+
+**Pop Quiz #1: is `mapStateToProps` a callback function?**
+
+You can declare it using the `function` keyword or as an arrow
+function, it doesn't matter. The first argument `mapStateToProps` takes
+is the entire store state (often state or reduxState). Since we declare this
+function within the component file I find it least confusing to call the
+argument reduxState so that you can more easily reason through it.
+
+`mapStateToProps` should return an object. This object should declare what
+properties we want to add to props on our component and have accurate corresponding
+values.
+
+```
+function mapStateToProps(reduxState){
+  return {
+    user: reduxState.user
+  }
+}
+```
+
+### `mapDispatchToProps`
+
